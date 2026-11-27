@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VYORA GLOBAL LTD – Apparel Buying House</title>
+<meta name="description" content="VYORA GLOBAL LTD connects global brands with trusted garment factories. Sourcing, quality control and on-time shipment.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#14213D;--denim:#2F5D8C;--thread:#C9A96E;--chalk:#EEF2F6;--muted:#5B6578;--r:18px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',system-ui,sans-serif;color:var(--ink);line-height:1.65;overflow-x:hidden}
+h1,h2,h3{font-family:'Bricolage Grotesque',sans-serif;line-height:1.08;letter-spacing:-.02em}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid var(--thread);outline-offset:3px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+section{padding:96px 0}
+h2{font-size:clamp(2rem,4.5vw,3.2rem);font-weight:800;max-width:18ch}
+.lead{color:var(--muted);max-width:56ch;margin-top:16px;font-size:1.08rem}
+.btn{display:inline-block;padding:14px 28px;border-radius:999px;font-weight:700;transition:transform .2s;border:0;cursor:pointer;font:inherit;font-weight:700}
+.btn:hover{transform:translateY(-3px)}
+.btn-gold{background:var(--thread);color:var(--ink)}
+.btn-line{border:2px solid rgba(255,255,255,.5);color:#fff}
+
+/* fabric patterns: shown until a photo from the images folder loads */
+.g1{background:repeating-linear-gradient(45deg,#2F5D8C 0 3px,#3b6fa3 3px 6px)}
+.g2{background:repeating-linear-gradient(90deg,#f6f6f6 0 14px,#C8402F 14px 22px)}
+.g3{background:linear-gradient(90deg,transparent 48%,rgba(255,255,255,.35) 48% 52%,transparent 52%),linear-gradient(0deg,transparent 48%,rgba(255,255,255,.35) 48% 52%,transparent 52%),#2E7D6B;background-size:40px 40px}
+.g4{background:radial-gradient(circle,rgba(255,255,255,.22) 3px,transparent 4px) 0 0/16px 16px,#7A4E9A}
+.g5{background:repeating-linear-gradient(-45deg,#C9A96E 0 4px,#A8884F 4px 9px)}
+.g6{background:repeating-linear-gradient(0deg,#14213D 0 10px,#22345c 10px 20px)}
+
+/* nav */
+nav{position:fixed;inset:0 0 auto 0;z-index:20;padding:16px 0;transition:background .3s}
+nav.solid{background:rgba(20,33,61,.92);backdrop-filter:blur(8px)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center}
+.logo{font-family:'Bricolage Grotesque';font-weight:800;font-size:1.25rem;color:#fff;display:flex;align-items:center;gap:10px}
+.logo i{width:34px;height:34px;border-radius:9px;background:var(--thread);display:grid;place-items:center;color:var(--ink);font-style:normal}
+.links{display:flex;gap:28px;color:#dbe4f0;font-weight:500}
+.links a:hover{color:var(--thread)}
+
+/* hero + typing + parallax */
+.hero{background:var(--ink);color:#fff;padding:180px 0 130px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:-20% 0;background:radial-gradient(circle at 80% 25%,rgba(47,93,140,.7),transparent 45%),repeating-linear-gradient(45deg,rgba(255,255,255,.03) 0 2px,transparent 2px 6px);transform:translateY(var(--py,0))}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center;position:relative}
+.hero h1{font-size:clamp(2.3rem,5.2vw,4.1rem);font-weight:800}
+.typed{margin-top:22px;font-size:1.35rem;font-weight:500;color:#e3ebf6}
+.hero p{margin:24px 0 34px;max-width:46ch;color:#c5d2e4;font-size:1.15rem}
+.hero .btn+.btn{margin-left:12px}
+.swatches{position:relative;height:420px}
+.hv{position:absolute;inset:-24px -12px -24px 24px;border-radius:26px;overflow:hidden;background:repeating-linear-gradient(45deg,#2F5D8C 0 3px,#244a72 3px 7px)}
+.hv video{width:100%;height:100%;object-fit:cover}
+.hv::after{content:"";position:absolute;inset:0;background:rgba(20,33,61,.45)}
+.sw{position:absolute;width:200px;height:260px;border-radius:14px;box-shadow:0 24px 50px rgba(0,0,0,.4);border:6px solid #fff;will-change:transform}
+.sw{transition:rotate .45s,scale .45s,box-shadow .45s;cursor:pointer;overflow:hidden}
+.sw::before{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(115deg,transparent 35%,rgba(255,255,255,.6) 50%,transparent 65%);translate:-130% 0;transition:translate .9s}
+.sw::after{content:"";position:absolute;inset:10px;z-index:2;pointer-events:none;border:2px dashed var(--thread);border-radius:8px;opacity:0;scale:.9;transition:opacity .4s,scale .4s}
+.sw:hover{z-index:10;rotate:0deg;scale:1.1;box-shadow:0 34px 70px rgba(0,0,0,.6),0 0 0 3px var(--thread)}
+.sw:hover::before{translate:130% 0}
+.sw:hover::after{opacity:1;scale:1}
+.s1{left:0;top:50px;rotate:-9deg}.s2{left:120px;top:0;rotate:4deg}.s3{left:50px;top:170px;rotate:-3deg}.s4{left:200px;top:150px;rotate:10deg}
+
+/* marquee */
+.marquee{background:var(--thread);color:var(--ink);overflow:hidden;padding:20px 0;white-space:nowrap}
+.marquee div{display:inline-flex;gap:50px;animation:scroll 28s linear infinite;font-family:'Bricolage Grotesque';font-weight:800;font-size:1.5rem}
+.marquee:hover div{animation-play-state:paused}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* about + counters */
+.about{background:var(--chalk)}
+.about .grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.stat{background:#fff;border-radius:var(--r);padding:26px;border-left:6px solid var(--thread)}
+.stat b{font-family:'Bricolage Grotesque';font-size:2.6rem;display:block;color:var(--denim)}
+.stat small{color:var(--muted)}
+
+/* carousel + tilt */
+.car-head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap}
+.arrows button{width:50px;height:50px;border-radius:50%;border:2px solid var(--ink);background:none;font-size:1.2rem;cursor:pointer;margin-left:8px;transition:.2s}
+.arrows button:hover{background:var(--ink);color:#fff}
+.track{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;padding:40px 24px 30px;scrollbar-width:none;perspective:1000px}
+.track::-webkit-scrollbar{display:none}
+.card{flex:0 0 280px;height:350px;border-radius:var(--r);scroll-snap-align:start;position:relative;overflow:hidden;color:#fff;
+  box-shadow:0 18px 40px rgba(20,33,61,.25);transition:transform .15s;transform-style:preserve-3d}
+.card::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 45%,rgba(20,33,61,.92))}
+.card div{position:absolute;z-index:2;left:22px;bottom:22px;right:22px;transform:translateZ(40px)}
+.card h3{font-size:1.4rem}.card p{font-size:.9rem;opacity:.85}
+
+/* horizontal gallery */
+.hgal{height:300vh;position:relative;background:var(--ink);padding:0}
+.pin{position:sticky;top:0;height:100vh;overflow:hidden;display:flex;flex-direction:column;justify-content:center;color:#fff}
+.pin h2{padding:0 24px;max-width:none;margin:0 auto 34px;width:100%;max-width:1160px}
+.strip{display:flex;gap:24px;padding:0 24px;will-change:transform}
+.shot{flex:0 0 min(70vw,380px);height:52vh;min-height:300px;border-radius:var(--r);position:relative;overflow:hidden}
+.shot span{position:absolute;left:18px;bottom:16px;background:rgba(20,33,61,.9);padding:6px 14px;border-radius:8px;font-weight:700}
+
+/* accordion */
+.acc{display:flex;gap:12px;height:440px;margin-top:44px}
+.panel{flex:1;border-radius:var(--r);position:relative;overflow:hidden;cursor:pointer;transition:flex .6s cubic-bezier(.2,.8,.2,1);color:#fff;border:0;text-align:left;font:inherit}
+.panel.on{flex:4}
+.panel::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 30%,rgba(20,33,61,.9))}
+.panel h3{position:absolute;z-index:2;left:22px;bottom:22px;font-size:1.3rem;white-space:nowrap}
+.panel p{position:absolute;z-index:2;left:22px;bottom:60px;right:22px;font-size:.95rem;opacity:0;transform:translateY(12px);transition:.4s .2s}
+.panel.on p{opacity:1;transform:none}
+.panel:not(.on) h3{writing-mode:vertical-rl;rotate:180deg;left:auto;right:22px;bottom:22px}
+
+/* parallax band */
+.band{height:380px;display:grid;place-items:center;text-align:center;color:#fff;position:relative;overflow:hidden;padding:0}
+.band::before{content:"";position:absolute;inset:-30% 0;background:repeating-linear-gradient(45deg,#2F5D8C 0 3px,#244a72 3px 7px);transform:translateY(var(--py,0))}
+.band h2{position:relative;max-width:22ch;margin:0 auto;padding:0 24px}
+
+/* video section */
+.vid{position:relative;min-height:80vh;display:grid;place-items:center;color:#fff;overflow:hidden;padding:0;background:repeating-linear-gradient(45deg,#2F5D8C 0 3px,#244a72 3px 7px)}
+.vid video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.vid::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(20,33,61,.85),rgba(20,33,61,.35))}
+.vid .txt{position:relative;z-index:2;max-width:720px;padding:80px 24px;margin-right:auto;margin-left:max(24px,calc((100vw - 1160px)/2 + 24px))}
+.vid h2{max-width:14ch;text-shadow:0 4px 24px rgba(0,0,0,.4)}
+.vid p{margin:20px 0 30px;font-size:1.15rem;color:#e3ebf6;max-width:46ch}
+.vid .mute{position:absolute;z-index:3;left:24px;bottom:24px;width:48px;height:48px;border-radius:50%;border:2px solid rgba(255,255,255,.7);background:rgba(20,33,61,.6);color:#fff;font-size:1.2rem;cursor:pointer}
+
+/* contact */
+.contact{background:linear-gradient(135deg,var(--denim),var(--ink));color:#fff}
+.contact .box{display:grid;grid-template-columns:1.3fr .7fr;gap:50px;align-items:start}
+.contact .lead{color:#cdd9ea}
+.info{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:var(--r);padding:30px}
+.info p{margin-bottom:14px}.info b{color:var(--thread);display:block;font-size:.85rem}
+footer{background:#0c1528;color:#8e9bb3;padding:26px 0;font-size:.9rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+/* process, quality, form */
+.tl{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:24px;margin-top:44px;counter-reset:t}
+.tl li{counter-increment:t;padding-top:64px;position:relative;font:700 1.1rem 'Bricolage Grotesque',sans-serif}
+.tl li::before{content:counter(t);position:absolute;top:0;left:0;width:46px;height:46px;border-radius:50%;background:var(--thread);display:grid;place-items:center;font-weight:800}
+.qs{background:var(--chalk)}
+.qs-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px}
+.qlist{margin:28px 0 0 22px;font-size:1.1rem}.qlist li{padding:10px 0;border-bottom:2px dashed #c9d3e0}
+.note{margin-top:16px;color:var(--muted);font-size:.92rem}
+.chips{list-style:none;display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.chips li{background:#fff;border:2px solid var(--denim);border-radius:999px;padding:8px 18px;font-weight:500}
+.qf{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:28px}
+.qf input,.qf select,.qf textarea,.qf .file{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.3);border-radius:12px;padding:13px 16px;color:#fff;font:inherit;width:100%}
+.qf input::placeholder,.qf textarea::placeholder{color:#c3d0e2}
+.qf select option{color:#14213D}
+.qf .file{display:block;cursor:pointer}.qf .file input{border:0;padding:6px 0 0;background:none}
+.qf textarea,.qf .btn{grid-column:1/-1}
+.flash{margin-top:20px;background:var(--thread);color:var(--ink);padding:12px 18px;border-radius:12px;font-weight:700}.flash.err{background:#ffd7d2}
+.info .btn{margin-top:8px;font-size:.9rem}
+/* whatsapp button */
+.wa{position:fixed;right:22px;bottom:22px;z-index:30;display:flex;align-items:center;gap:0;height:60px;border-radius:999px;background:#25D366;color:#fff;box-shadow:0 10px 28px rgba(0,0,0,.3);transition:transform .25s}
+.wa svg{width:34px;height:34px;margin:13px;fill:#fff;flex:none}
+.wa span{max-width:0;overflow:hidden;white-space:nowrap;font-weight:700;transition:max-width .35s,margin .35s}
+.wa:hover{transform:translateY(-4px)}
+.wa:hover span{max-width:160px;margin-right:20px}
+.wa::before{content:"";position:absolute;inset:0;border-radius:999px;border:3px solid #25D366;animation:ring 2.2s ease-out infinite}
+@keyframes ring{to{transform:scale(1.5);opacity:0}}
+/* scroll reveal */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .8s,transform .8s}
+.reveal.in{opacity:1;transform:none}
+
+@media(max-width:900px){
+  .links{display:none}
+  .hero .wrap,.about .grid,.contact .box,.qs-grid{grid-template-columns:1fr}.qf{grid-template-columns:1fr}
+  .swatches{height:360px;transform:scale(.8);transform-origin:left top}
+  .acc{flex-direction:column;height:720px}
+  .panel:not(.on) h3{writing-mode:horizontal-tb;rotate:0deg;left:22px;right:auto}
+  section{padding:70px 0}
+}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<nav id="nav"><div class="wrap">
+  <a href="#" class="logo"><i>V</i> VYORA GLOBAL LTD</a>
+  <div class="links"><a href="#about">About us</a><a href="#products">Products</a><a href="#services">Services</a><a href="#process">How we work</a><a href="#quality">Quality</a><a href="#contact">Contact</a></div>
+  <a href="#contact" class="btn btn-gold">Get a quote</a>
+</div></nav>
+
+<!-- Hero: typing text + parallax -->
+<header class="hero" data-parallax="0.25">
+  <div class="wrap">
+    <div>
+      <h1>From head to toe.<br>From Bangladesh to the world.</h1>
+      <div class="typed">Your vision. Our sourcing. Global fashion.</div>
+      <p>Your trusted global fashion sourcing partner for quality apparel, responsible manufacturing and seamless export solutions.</p>
+      <a href="#contact" class="btn btn-gold">Start your order</a>
+      <a href="#products" class="btn btn-line">Explore our products</a>
+    </div>
+    <div class="swatches" aria-hidden="true">
+      <div class="hv"><video autoplay muted loop playsinline preload="metadata"><source src="videos/hero-bg.mp4" type="video/mp4"></video></div>
+      <div class="sw s1 g1" data-img="hero-1.jpg" data-speed="-0.06"></div>
+      <div class="sw s2 g2" data-img="hero-2.jpg" data-speed="0.08"></div>
+      <div class="sw s3 g3" data-img="hero-3.jpg" data-speed="-0.12"></div>
+      <div class="sw s4 g4" data-img="hero-4.jpg" data-speed="0.14"></div>
+    </div>
+  </div>
+</header>
+
+<!-- Infinite marquee -->
+<div class="marquee" aria-label="Product categories"><div id="mq">
+  <span>Headwear</span><span>✦</span><span>Men</span><span>✦</span><span>Women</span><span>✦</span><span>Kids &amp; Baby</span><span>✦</span><span>Denim</span><span>✦</span><span>Knitwear</span><span>✦</span><span>Woven</span><span>✦</span><span>Sweater</span><span>✦</span><span>Activewear</span><span>✦</span><span>Outerwear</span><span>✦</span><span>Accessories</span><span>✦</span>
+</div></div>
+
+<!-- About + animated counters -->
+<section class="about" id="about"><div class="wrap grid">
+  <div class="reveal">
+    <h2>A global fashion sourcing partner from Bangladesh.</h2>
+    <p class="lead">VYORA GLOBAL LTD is a Bangladesh-based fashion sourcing and export company. We connect international buyers with the right products, manufacturing partners and supply-chain solutions.</p>
+    <p class="lead"><b>Mission:</b> to make global fashion sourcing from Bangladesh simpler, smarter and more reliable.<br><b>Vision:</b> to become a trusted global fashion sourcing partner from Bangladesh.<br><b>Values:</b> integrity, quality, transparency, responsibility, innovation, on-time delivery.</p>
+  </div>
+  <div class="stats reveal">
+    <div class="stat"><b data-count="11">0</b><small>Fashion categories, head to toe</small></div>
+    <div class="stat"><b data-count="8">0</b><small>Sourcing and export services</small></div>
+    <div class="stat"><b data-count="6">0</b><small>Quality control checkpoints</small></div>
+    <div class="stat"><b data-count="3">0</b><small>Collections: men, women and kids</small></div>
+  </div>
+</div></section>
+
+<!-- Card carousel + 3D tilt -->
+<section id="products"><div class="wrap car-head reveal">
+  <div><h2>Fashion from head to toe.</h2><p class="lead">Men, women, kids and baby, from everyday basics to outerwear. Drag, swipe or use the arrows.</p></div>
+  <div class="arrows"><button id="prev" aria-label="Previous">←</button><button id="next" aria-label="Next">→</button></div>
+</div>
+<div class="wrap" style="padding:0"><div class="track" id="track">
+  <div class="card g1" data-img="denim.jpg"><div><h3>Denim</h3><p>Jeans, jackets and shorts for men, women and kids</p></div></div>
+  <div class="card g2" data-img="woven.jpg"><div><h3>Woven</h3><p>Shirts, blouses, dresses, skirts and trousers</p></div></div>
+  <div class="card g3" data-img="knitwear.jpg"><div><h3>Knitwear</h3><p>T-shirts, polos, hoodies and sweaters</p></div></div>
+  <div class="card g4" data-img="activewear.jpg"><div><h3>Activewear</h3><p>Leggings, tracksuits and sportswear</p></div></div>
+  <div class="card g5" data-img="kidswear.jpg"><div><h3>Kids &amp; Baby</h3><p>Babywear, boys and girls collections</p></div></div>
+  <div class="card g6" data-img="outerwear.jpg"><div><h3>Outerwear</h3><p>Padded jackets, coats and vests</p></div></div>
+  <div class="card g2" data-img="headwear.jpg"><div><h3>Headwear</h3><p>Caps, beanies and hats</p></div></div>
+  <div class="card g3" data-img="accessories.jpg"><div><h3>Accessories</h3><p>Lifestyle and fashion accessories</p></div></div>
+</div></div></section>
+
+<!-- Video section with text overlay -->
+<section class="vid" id="video">
+  <video id="vv" muted loop playsinline preload="metadata" poster="videos/vyora-poster.jpg">
+    <source src="videos/vyora.mp4" type="video/mp4">
+  </video>
+  <div class="txt reveal">
+    <h2>Fashion sourced. Quality assured. Delivered.</h2>
+    <p>From Bangladesh to the world: a short look at how VYORA GLOBAL LTD takes your order from concept to shipment.</p>
+    <a href="#contact" class="btn btn-gold">Start your order</a>
+  </div>
+  <button class="mute" id="mute" aria-label="Turn sound on">🔇</button>
+</section>
+
+<!-- Parallax band -->
+<section class="band" data-parallax="0.3"><h2>Quality is not a checkpoint. It is our process.</h2></section>
+
+<!-- Horizontal scroll gallery -->
+<section class="hgal" id="gallery"><div class="pin">
+  <h2>Our manufacturing partners at work.</h2>
+  <div class="strip" id="strip">
+    <div class="shot g1" data-img="cutting.jpg"><span>Cutting</span></div>
+    <div class="shot g2" data-img="sewing.jpg"><span>Sewing</span></div>
+    <div class="shot g3" data-img="washing.jpg"><span>Washing</span></div>
+    <div class="shot g4" data-img="finishing.jpg"><span>Finishing</span></div>
+    <div class="shot g5" data-img="quality.jpg"><span>Quality control</span></div>
+    <div class="shot g6" data-img="packing.jpg"><span>Packing</span></div>
+  </div>
+</div></section>
+
+<!-- Expandable image accordion -->
+<section id="services"><div class="wrap">
+  <h2 class="reveal">Our services.</h2>
+  <div class="acc reveal" id="acc">
+    <button class="panel g1 on" data-img="factory-matching.jpg"><h3>Factory sourcing</h3><p>We connect your order with selected manufacturing partners across Bangladesh.</p></button>
+    <button class="panel g2" data-img="development.jpg"><h3>Product development</h3><p>From your idea or tech pack to a product ready for sampling.</p></button>
+    <button class="panel g3" data-img="product-sourcing.jpg"><h3>Product sourcing</h3><p>We source products to your specification, price and delivery schedule.</p></button>
+    <button class="panel g5" data-img="fabric-trims.jpg"><h3>Fabric &amp; trims</h3><p>Fabrics, trims and materials sourced to match your design.</p></button>
+    <button class="panel g4" data-img="sampling.jpg"><h3>Sample development</h3><p>Samples made and revised until you approve.</p></button>
+    <button class="panel g6" data-img="quality-control.jpg"><h3>Quality control</h3><p>Inspection at every stage, from fabric to final shipment.</p></button>
+    <button class="panel g1" data-img="production.jpg"><h3>Production follow-up</h3><p>We track production closely and keep you updated.</p></button>
+    <button class="panel g2" data-img="logistics.jpg"><h3>Shipping &amp; export</h3><p>Packing, export documents and delivery to your port.</p></button>
+  </div>
+</div></section>
+
+<!-- How we work -->
+<section class="proc" id="process"><div class="wrap">
+  <h2 class="reveal">How we work.</h2>
+  <p class="lead reveal">Nine clear steps from your first enquiry to delivery.</p>
+  <ol class="tl reveal"><li>Inquiry</li><li>Sourcing</li><li>Product development</li><li>Sampling</li><li>Price &amp; approval</li><li>Production</li><li>Quality control</li><li>Shipping</li><li>Delivery</li></ol>
+</div></section>
+
+<!-- Quality + sustainability -->
+<section class="qs" id="quality"><div class="wrap qs-grid">
+  <div class="reveal">
+    <h2>Quality &amp; compliance.</h2>
+    <ol class="qlist"><li>Fabric inspection</li><li>Pre-production meeting</li><li>Inline inspection</li><li>Measurement &amp; workmanship</li><li>Final inspection</li><li>Shipment approval</li></ol>
+    <p class="note">Certification logos are shown only where genuine and authorised.</p>
+  </div>
+  <div class="reveal" id="sustainability">
+    <h2>Fashion with responsibility.</h2>
+    <ul class="chips"><li>Sustainable materials</li><li>Organic &amp; recycled fabrics</li><li>Responsible manufacturing</li><li>Worker welfare</li><li>Environmental responsibility</li><li>Waste reduction</li><li>Energy efficiency</li><li>Green manufacturing</li></ul>
+  </div>
+</div></section>
+
+<!-- Contact -->
+<section class="contact" id="contact"><div class="wrap box">
+  <div class="reveal">
+    <h2>Request a quote.</h2>
+    <p class="lead">Tell us what you need. Send your tech pack or a reference image and we reply with sourcing options within two working days.</p>
+    <form class="qf" id="qf">
+      <input name="name" placeholder="Name" required>
+      <input name="company" placeholder="Company" required>
+      <input name="country" placeholder="Country" required>
+      <input name="email" type="email" placeholder="Email" required>
+      <input name="whatsapp" placeholder="WhatsApp" required>
+      <select name="category" required><option value="">Product category</option><option>Men</option><option>Women</option><option>Kids &amp; Baby</option><option>Denim</option><option>Knitwear</option><option>Woven</option><option>Sweater</option><option>Activewear</option><option>Outerwear</option><option>Headwear</option><option>Accessories</option></select>
+      <input name="quantity" placeholder="Estimated quantity" required>
+      <input name="target_price" placeholder="Target price">
+      <input name="delivery_date" type="date" title="Target delivery date">
+      <p class="note" style="grid-column:1/-1;color:#cdd9ea;margin:0">When you submit, WhatsApp opens with your details. You can send your tech pack or reference images in the same chat.</p>
+      <textarea name="description" rows="4" placeholder="Product description" required></textarea>
+      <button class="btn btn-gold" type="submit">Submit enquiry</button>
+    </form>
+  </div>
+  <div>
+    <div class="info reveal">
+      <p><b>Office</b>House 12, Road 5, Gulshan, Dhaka</p>
+      <p><b>Email</b>info@vyoraglobal.example</p>
+      <p><b>Phone / WhatsApp</b>+880 1700 000000</p>
+    </div>
+    <div class="info reveal" style="margin-top:20px">
+      <h3 style="font-size:1.3rem;margin-bottom:8px">Are you a garment manufacturer?</h3>
+      <p>Partner with VYORA GLOBAL LTD and connect your manufacturing capabilities with international fashion buyers.</p>
+      <a class="btn btn-gold" href="mailto:partners@vyoraglobal.example?subject=Manufacturing%20partner">Become our manufacturing partner</a>
+    </div>
+  </div>
+</div></section>
+
+<footer><div class="wrap"><span>© <span id="yr">2026</span> VYORA GLOBAL LTD. All rights reserved.</span><span>One partner. Every fashion category. From Bangladesh to the world.</span></div></footer>
+
+<a class="wa" href="https://wa.me/8801700000000?text=Hello%20VYORA%20GLOBAL%20LTD%2C%20I%20would%20like%20to%20request%20a%20quote." target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+  <span>Chat with us</span>
+</a>
+
+<script>
+(()=>{
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const calm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+// Photos: put files in public/images, named as in each data-img. Missing files keep the fabric pattern.
+const IMG="images/";
+$$('[data-img]').forEach(e=>{
+  const im=new Image();
+  im.onload=()=>{e.style.backgroundImage=`url("${IMG+e.dataset.img}")`;e.style.backgroundSize='cover';e.style.backgroundPosition='center'};
+  im.src=IMG+e.dataset.img;
+});
+
+if(calm)$$('.hv video').forEach(v=>v.pause());
+
+// Infinite marquee: duplicate content for a seamless loop
+const mq=$('#mq');mq.innerHTML+=mq.innerHTML;
+
+// Scroll reveal + animated counters
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+  if(!e.isIntersecting)return;
+  e.target.classList.add('in');io.unobserve(e.target);
+  e.target.querySelectorAll('[data-count]').forEach(n=>{
+    const end=+n.dataset.count,suf=n.dataset.suffix||'',t0=performance.now();
+    (function f(t){const p=Math.min((t-t0)/1800,1);n.textContent=Math.round(end*(1-Math.pow(1-p,3)))+suf;if(p<1)requestAnimationFrame(f)})(t0);
+  });
+}),{threshold:.2});
+$$('.reveal').forEach(e=>io.observe(e));
+
+// Carousel
+const tr=$('#track'),step=()=>tr.querySelector('.card').offsetWidth+22;
+$('#next').onclick=()=>tr.scrollBy({left:step(),behavior:'smooth'});
+$('#prev').onclick=()=>tr.scrollBy({left:-step(),behavior:'smooth'});
+
+// 3D tilt
+$$('.card').forEach(c=>{
+  c.addEventListener('mousemove',e=>{
+    const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+    c.style.transform=`rotateY(${x*18}deg) rotateX(${-y*18}deg) scale(1.03)`;
+  });
+  c.addEventListener('mouseleave',()=>c.style.transform='');
+});
+
+// Accordion
+$$('.panel').forEach(p=>{
+  const open=()=>{$$('.panel').forEach(x=>x.classList.remove('on'));p.classList.add('on')};
+  p.addEventListener('click',open);p.addEventListener('mouseenter',()=>matchMedia('(hover:hover)').matches&&open());
+});
+
+// Video: play only when visible, sound toggle
+const vv=$('#vv');
+if(vv){
+  new IntersectionObserver(es=>es.forEach(e=>{
+    if(e.isIntersecting&&!calm)vv.play().catch(()=>{});else vv.pause();
+  }),{threshold:.35}).observe(vv);
+  $('#mute').onclick=function(){vv.muted=!vv.muted;this.textContent=vv.muted?'🔇':'🔊';this.setAttribute('aria-label',vv.muted?'Turn sound on':'Turn sound off')};
+}
+
+// Scroll-driven: nav, parallax, horizontal gallery
+const nav=$('#nav'),hg=$('#gallery'),strip=$('#strip'),px=$$('[data-parallax]'),sw=$$('[data-speed]');
+function sizeGallery(){hg.style.height=(strip.scrollWidth-innerWidth+innerHeight)+'px'}
+sizeGallery();addEventListener('resize',sizeGallery);
+function onScroll(){
+  const y=scrollY;nav.classList.toggle('solid',y>60);
+  if(!calm){
+    px.forEach(s=>{const r=s.getBoundingClientRect();s.style.setProperty('--py',(-r.top*s.dataset.parallax)+'px')});
+    sw.forEach(s=>s.style.transform=`translateY(${y*s.dataset.speed}px)`);
+  }
+  const r=hg.getBoundingClientRect(),max=hg.offsetHeight-innerHeight;
+  const p=Math.min(Math.max(-r.top/max,0),1);
+  strip.style.transform=`translateX(${-p*(strip.scrollWidth-innerWidth)}px)`;
+}
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+// Year + quote form -> WhatsApp (number is read from the WhatsApp button link)
+$('#yr').textContent=new Date().getFullYear();
+$('#qf').addEventListener('submit',e=>{
+  e.preventDefault();
+  const f=new FormData(e.target),g=k=>(f.get(k)||'-').toString().trim();
+  const wa=$('.wa').href.match(/wa\.me\/(\d+)/)[1];
+  const msg=`Quote request - VYORA GLOBAL LTD\nName: ${g('name')}\nCompany: ${g('company')}\nCountry: ${g('country')}\nEmail: ${g('email')}\nWhatsApp: ${g('whatsapp')}\nCategory: ${g('category')}\nQuantity: ${g('quantity')}\nTarget price: ${g('target_price')}\nDelivery date: ${g('delivery_date')}\nDetails: ${g('description')}`;
+  window.open('https://wa.me/'+wa+'?text='+encodeURIComponent(msg),'_blank');
+});
+})();
+</script>
+</body>
+</html>
